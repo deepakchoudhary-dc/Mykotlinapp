@@ -1,12 +1,9 @@
 package com.example.mykotlinapp
 
 import android.content.ContentValues.TAG
-import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.os.Parcel
 import android.os.Parcelable
-import android.provider.AlarmClock
 import android.util.Log
 import android.view.View
 import android.widget.Button
@@ -15,6 +12,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+
 
 class MainActivity() : AppCompatActivity(), Parcelable {
     constructor(parcel: Parcel) : this() {
@@ -89,7 +87,35 @@ class MainActivity() : AppCompatActivity(), Parcelable {
         override fun newArray(size: Int): Array<MainActivity?> {
             return arrayOfNulls(size)
         }
+
     }
+
+
+
+    fun getWeather(cityName:String):String{
+        //query the db and get the date
+        return "{temp:32,windspeed:40,humidity:50}"
+
+    }
+    fun getTemp(cityName:String):Int{
+        return 25
+    }
+    super.onCreate(savedInstanceState)
+    //inflate this xml
+    setContentView(R.layout.activity_main)
+    var name:String =  "abdul"
+
+    Log.i(TAG,"activity is getting created")
+    // inflateXml()
+    // var myEmp = Employee("abdul")
+    @@ -95,4 +97,6 @@ class MainActivity : AppCompatActivity() {
+        loginButton.setText("login")
+    }
+
+
+
+
+}
 }
 
 
